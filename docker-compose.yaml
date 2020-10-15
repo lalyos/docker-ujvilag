@@ -10,6 +10,7 @@ services:
             - '3306'
         volumes:
             - ./sql/set5:/docker-entrypoint-initdb.d
+            - persondb:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=secret
         image: mysql
@@ -17,3 +18,5 @@ services:
         ports:
             - '8080'
         image: adminer
+volumes:
+  persondb:
