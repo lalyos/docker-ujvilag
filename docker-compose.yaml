@@ -6,7 +6,7 @@ services:
         environment:
             - TITLE=keso delutan
             - COLOR=lightgreen
-        image: ebed:v3
+        build: .
     mydb:
         ports:
             - '3306:3306'
