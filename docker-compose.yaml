@@ -3,9 +3,7 @@ services:
     web:
         ports:
             - 80
-        environment:
-            - TITLE=keso delutan
-            - COLOR=lightgreen
+        env_file: .env
         build: .
     mydb:
         ports:
