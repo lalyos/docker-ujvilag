@@ -9,7 +9,7 @@ services:
         build: .
     mydb:
         ports:
-            - '3306:3306'
+            - '3306'
         volumes:
             - ./sql/set5:/docker-entrypoint-initdb.d
         environment:
@@ -17,5 +17,5 @@ services:
         image: mysql
     adminer:
         ports:
-            - '8080:8080'
+            - '8080'
         image: adminer
