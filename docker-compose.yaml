@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+    web:
+        ports:
+            - 80
+        environment:
+            - TITLE=keso delutan
+            - COLOR=lightgreen
+        image: ebed:v3
+    mydb:
+        ports:
+            - '3306:3306'
+        volumes:
+            - ./sql/set5:/docker-entrypoint-initdb.d
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+        image: mysql
+    adminer:
+        ports:
+            - '8080:8080'
+        image: adminer
